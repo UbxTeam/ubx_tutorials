@@ -1,0 +1,21 @@
+return block
+{
+      name="receiver",
+      meta_data="A receiver cblock which can handle my data",
+      port_cache=true,
+
+      types = {
+	-- define types this blocks uses
+	 { name="my_data", class='struct' },
+      },
+
+      ports = {
+	-- define the ports for this block
+	 { name="input", in_type_name="struct my_data", in_data_len=1, doc="input port for my data" },
+      },
+      
+      -- define which operations this block implements
+      operations = { start=true, stop=true, step=true },
+
+      cpp = false,
+}

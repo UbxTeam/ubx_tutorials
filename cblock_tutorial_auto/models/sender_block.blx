@@ -1,0 +1,21 @@
+return block
+{
+      name="sender",
+      meta_data="A sender cblock which can handle my data",
+      port_cache=true,
+
+      types = {
+        -- define types this blocks uses
+	 { name="my_data", class='struct' },
+      },
+
+      ports = {
+	-- define the ports for this block
+	 { name="output", out_type_name="struct my_data", out_data_len=1, doc="output port for my data" },
+      },
+      
+      -- define which operations this block implements
+      operations = { start=true, stop=true, step=true },
+
+      cpp = false,
+}

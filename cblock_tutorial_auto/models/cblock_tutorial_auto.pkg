@@ -1,0 +1,19 @@
+return pkg
+{
+  name="cblock_tutorial_auto",
+  path="../",
+  
+  types = {
+    { name="my_data", dir="types" },
+  },
+  
+  blocks = {
+    { name="sender", file="sender_block.blx", src_dir="src" },
+    { name="receiver", file="receiver_block.blx", src_dir="src" },
+  },
+  
+  modules = {
+    { name="sendermod", blocks={"sender"} },
+    { name="receivermod", blocks={"receiver"} },
+  },
+}
